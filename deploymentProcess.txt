@@ -1,0 +1,32 @@
+
+1. Development (Dev) Environment:
+   - Create a new feature branch for this specific feature named `feature/US-000***’ and commit the changes made to BookCreationAPI class and the BookCreationAPITest test class to this branch
+   - Push the changes made in your feature branch to your Git repository once the 75+( Ideally 90%) code coverage is achieved in the Dev Org run.
+
+
+2. Integration Environment:
+   - CI/CD pipeline should be configured to automatically trigger deployment whenever changes are pushed from the feature branch to Integration Org Branch using a Pull Request.
+   - Deploy the changes from your feature branch to the Integration environment using your CI/CD pipeline .
+   - Test the feature's integration with other components.
+   - Testing team should Conduct testing specific to the new feature as well as E2E business flows, ensuring that it meets the requested functional requirements.
+
+
+3. User Acceptance Testing (UAT) Environment:
+   - If the integration tests are successful, create a deployment package that includes the changes from the feature branch.
+   - Deploy the package to the UAT environment through your CI/CD pipeline.
+   - Conduct UAT testing specific to the new feature, ensuring that it meets the desired functionality and user requirements.
+
+
+
+4. Staging Environment:
+   - Similar to UAT, deploy the feature changes to the Staging environment also Run all Test classes to ensure seamless delivery to production.
+   - Test the feature's behaviour within the broader context of the application and perform Regression Testing specifically on Existing Data as well as Newly created Data.
+   - Run comprehensive end-to-end tests in the Staging environment to ensure that the feature integrates seamlessly with the existing components.
+
+5. Production Environment:
+   - After successful testing in Staging, create a deployment package for Production that includes the feature changes.
+   - Deploy the package to the Production environment through your CI/CD pipeline.
+    - Run High Level Component Checks in the Production environment to confirm that the new components related to feature are deployed as expected and has not negatively impacted existing components.
+
+6. Rollback Plan:
+    - In case of critical issues, you can revert the changes by removing the feature branch or applying hotfixes to the `dev` branch.
